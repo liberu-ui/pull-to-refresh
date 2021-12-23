@@ -1,87 +1,34 @@
-# vue-pull-refresh
-[![Build Status](https://travis-ci.org/lakb248/vue-pull-refresh.svg?branch=master)](https://travis-ci.org/lakb248/vue-pull-refresh)
+# Progress Circle
 
-> A pull down refresh component implements by vuejs 2.0 for mobile.
+![npm license](https://img.shields.io/npm/l/@enso-ui/pull-to-refresh.svg) 
+![npm download](https://img.shields.io/npm/dm/@enso-ui/pull-to-refresh.svg) 
+![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/pull-to-refresh.svg) 
+![GitHub issues](https://img.shields.io/github/issues/enso-ui/pull-to-refresh.svg) 
+![npm version](https://img.shields.io/npm/v/@enso-ui/pull-to-refresh.svg) 
 
-## Demo
-
-[Demo](https://lakb248.github.io/vue-pull-refresh)
-
-PS: Please use browsers that support Promise
+Progress Circle
 
 ## Usage
+The component can be used outside the Enso ecosystem.
 
-### Install
+### Demo
 
-```bash
-npm install vue-pull-refresh --save
-```
+For live examples and demos, you may visit [laravel-enso.com](https://www.laravel-enso.com)
 
-### CommonJS
+### Installation, Configuration & Usage
 
-```javascript
-var VuePullRefresh = require('vue-pull-refresh');
+Be sure to check out the full documentation for this package available at [docs.laravel-enso.com](https://docs.laravel-enso.com/frontend/pull-to-refresh.html)
 
-new Vue({
-    components: {
-        'vue-pull-refresh': VuePullRefresh
-    },
-    data: function () {
-        return {};
-    },
-    methods: {
-        onRefresh: function() {
-            return new Promise(function (resolve, reject) {
-                setTimeout(function () {
-                    resolve();
-                }, 1000);
-            });
-        }
-    },
-    template: '<vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>'
-});
-```
+## Contributions
 
-### ES6
-```javascript
-import VuePullRefresh from 'vue-pull-refresh';
+are welcome. Pull requests are great, but issues are good too.
 
-new Vue({
-    components: {
-        'vue-pull-refresh': VuePullRefresh
-    },
-    data: function () {
-        return {};
-    },
-    methods: {
-        onRefresh: function() {
-            return new Promise(function (resolve, reject) {
-                setTimeout(function () {
-                    resolve();
-                }, 1000);
-            });
-        }
-    },
-    template: '<vue-pull-refresh :on-refresh="onRefresh"></vue-pull-refresh>'
-});
-```
+Thank you to all the people who already contributed to Enso!
 
-### Props
-| Property | Description |
-|:--|:--|
-| onRefresh | refresh event;Should return a promise. |
-| config | {<br>errorLabel: label shows when error<br>startLabel: label shows when pull down start<br>readyLabel: label shows when ready to refresh<br>loadingLabel: label shows when loading<br>pullDownHeight: the height toggle pull down refresh action<br>} |
+## Inspiration
 
-## Contribution
-First, install dependencies
-```
-npm install
-```
-Second, setup development environment
-```
-npm run dev
-```
+This package is originally based on [vue-pull-refresh](lakb248/vue-pull-refresh).
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT)
+[ISC](https://opensource.org/licenses/ISC)
