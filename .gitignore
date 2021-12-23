@@ -1,10 +1,8 @@
-# node module #
-node_modules/
-
-# test coveage result #
-coverage/
-
-.DS_Store
-
-# log file #
-*.log
+/node_modules
+/.vscode
+/.idea
+npm-debug.log
+.DS_STORE
+._*
+yarn.lock
+yarn-error.log

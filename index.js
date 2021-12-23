@@ -1,3 +1,3 @@
-import PullToRefresh from './src/pull-to-refresh.vue';
+import PullToRefresh from './src/PullToRefresh.vue';
 
-module.exports = PullToRefresh;
+export default PullToRefresh;
