@@ -7,11 +7,11 @@
                 <i class="pull-down-content--icon"
                     :class="iconClass"/>
                 <span class="pull-down-content--label">
-                    {{label}}
+                    {{ label }}
                 </span>
             </div>
         </div>
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 
@@ -28,25 +28,26 @@ const ANIMATION = 'height .2s ease';
 export default {
     props: {
         onRefresh: {
-            type: Function
+            type: Function,
+            required: true,
         },
         config: {
             type: Object,
-            default: function() {
+            default() {
                 return {
                     pullDownHeight: 60,
                 };
-            }
-        }
+            },
+        },
     },
     data() {
         return {
             pullDown: {
                 status: 0,
                 height: 0,
-                msg: ''
+                msg: '',
             },
-            canPull: false
+            canPull: false,
         };
     },
     computed: {
@@ -58,26 +59,35 @@ export default {
             return this.customLabels[this.pullDown.status + 1];
         },
         customLabels() {
-            let errorLabel = this.config.errorLabel !== undefined ? this.config.errorLabel : LABELS[0];
-            let startLabel = this.config.startLabel !== undefined ? this.config.startLabel : LABELS[1];
-            let readyLabel = this.config.readyLabel !== undefined ? this.config.readyLabel : LABELS[2];
-            let loadingLabel = this.config.loadingLabel !== undefined ? this.config.loadingLabel : LABELS[3];
+            const errorLabel = this.config.errorLabel !== undefined
+                ? this.config.errorLabel
+                : LABELS[0];
+            const startLabel = this.config.startLabel !== undefined
+                ? this.config.startLabel
+                : LABELS[1];
+            const readyLabel = this.config.readyLabel !== undefined
+                ? this.config.readyLabel
+                : LABELS[2];
+            const loadingLabel = this.config.loadingLabel !== undefined
+                ? this.config.loadingLabel
+                : LABELS[3];
+
             return [errorLabel, startLabel, readyLabel, loadingLabel];
         },
         iconClass() {
             // icon of pull down
             if (this.pullDown.status === STATUS_REFRESH) {
                 return 'pull-down-refresh';
-            } else if (this.pullDown.status === STATUS_ERROR) {
+            } if (this.pullDown.status === STATUS_ERROR) {
                 return 'pull-down-error';
             }
             return '';
         },
         pullDownContentStyle() {
             return {
-                bottom: (this.config.pullDownHeight - 40) / 2 + 'px'
+                bottom: `${(this.config.pullDownHeight - 40) / 2}px`,
             };
-        }
+        },
     },
     mounted() {
         this.$nextTick(() => {
@@ -91,7 +101,7 @@ export default {
              * @param {Object} pullDown the pull down
              * @param {Boolean} withAnimation whether add animation when pull up
              */
-            let resetPullDown = (pullDown, withAnimation = false) => {
+            const resetPullDown = (pullDown, withAnimation = false) => {
                 if (withAnimation) {
                     pullDownHeader.style.transition = ANIMATION;
                 }
@@ -101,7 +111,7 @@ export default {
             // store of touch position, include start position and distance
             const touchPosition = {
                 start: 0,
-                distance: 0
+                distance: 0,
             };
 
             // @see https://www.chromestatus.com/feature/5745543795965952
@@ -109,13 +119,15 @@ export default {
             let supportsPassive = false;
             try {
                 const opts = Object.defineProperty({}, 'passive', {
-                    get: function() {
+                    get() {
                         supportsPassive = true;
-                    }
+                    },
                 });
                 /* global window */
-                window.addEventListener("test", null, opts);
-            } catch (e) {}
+                window.addEventListener('test', null, opts);
+            } catch (e) {
+                // do nothing
+            }
 
             // bind touchstart event to store start position of touch
             el.addEventListener('touchstart', e => {
@@ -125,7 +137,7 @@ export default {
                     this.canPull = false;
                 }
                 touchPosition.start = e.touches.item(0).pageY;
-            }, supportsPassive ? {passive: true} : false);
+            }, supportsPassive ? { passive: true } : false);
 
             /**
              * bind touchmove event, do the following:
@@ -160,9 +172,9 @@ export default {
                      * and rotate the icon based on distance
                      */
                     this.pullDown.status = STATUS_START;
-                    icon.style.transform = 'rotate(' + distance / this.config.pullDownHeight * 180 + 'deg)';
+                    icon.style.transform = `rotate(${distance / this.config.pullDownHeight * 180}deg)`;
                 }
-            }, supportsPassive ? {passive: true} : false);
+            }, supportsPassive ? { passive: true } : false);
 
             // bind touchend event
             el.addEventListener('touchend', () => {
@@ -216,7 +228,7 @@ export default {
                 pullDownHeader.style.transition = '';
             });
         });
-    }
+    },
 };
 </script>
 
