@@ -1,5 +1,5 @@
 {
-    "name": "@enso-ui/pull-to-refresh",
+    "name": "@cgdsoftware/pull-to-refresh",
     "version": "0.1.2",
     "description": "a pull to refresh component with Vue",
     "main": "index.js",
