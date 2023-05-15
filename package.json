@@ -1,5 +1,5 @@
 {
-    "name": "@cgdsoftware/pull-to-refresh",
+    "name": "@liberu-ui/pull-to-refresh",
     "version": "0.1.2",
     "description": "a pull to refresh component with Vue",
     "main": "index.js",
