@@ -1,10 +1,10 @@
 # Progress Circle
 
-![npm license](https://img.shields.io/npm/l/@enso-ui/pull-to-refresh.svg) 
-![npm download](https://img.shields.io/npm/dm/@enso-ui/pull-to-refresh.svg) 
-![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/pull-to-refresh.svg) 
-![GitHub issues](https://img.shields.io/github/issues/enso-ui/pull-to-refresh.svg) 
-![npm version](https://img.shields.io/npm/v/@enso-ui/pull-to-refresh.svg) 
+![npm license](https://img.shields.io/npm/l/@liberu-ui/pull-to-refresh.svg) 
+![npm download](https://img.shields.io/npm/dm/@liberu-ui/pull-to-refresh.svg) 
+![GitHub top language](https://img.shields.io/github/languages/top/liberu-ui/pull-to-refresh.svg) 
+![GitHub issues](https://img.shields.io/github/issues/liberu-ui/pull-to-refresh.svg) 
+![npm version](https://img.shields.io/npm/v/@liberu-ui/pull-to-refresh.svg) 
 
 Progress Circle
 
