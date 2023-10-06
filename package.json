@@ -1,6 +1,6 @@
 {
     "name": "@liberu-ui/pull-to-refresh",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "a pull to refresh component with Vue",
     "main": "index.js",
     "scripts": {
