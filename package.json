@@ -2,7 +2,7 @@
     "name": "@liberu-ui/pull-to-refresh",
     "version": "0.1.6",
     "description": "a pull to refresh component with Vue",
-    "main": "index.js",
+    "main": "index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
